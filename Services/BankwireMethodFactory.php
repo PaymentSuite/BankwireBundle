@@ -11,22 +11,23 @@
  * @author Marc Morera <yuhu@mmoreram.com>
  */
 
-namespace PaymentSuite\BankwireBundle;
+namespace PaymentSuite\BankwireBundle\Services;
 
+use PaymentSuite\BankwireBundle\BankwireMethod;
 use PaymentSuite\PaymentCoreBundle\PaymentMethodInterface;
 
 /**
- * BankwireMethod class
+ * Class BankwireMethodFactory
  */
-final class BankwireMethod implements PaymentMethodInterface
+class BankwireMethodFactory
 {
     /**
-     * Get Bankwire method name
+     * Create new PaymentMethodInterface instance
      *
-     * @return string Payment name
+     * @return PaymentMethodInterface New instance
      */
-    public function getPaymentName()
+    public function create()
     {
-        return 'Bankwire';
+        return new BankwireMethod();
     }
 }
